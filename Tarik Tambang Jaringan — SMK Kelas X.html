@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/V14/Downloads/Qwen_html_20260912_23lfhh7wf.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarik Tambang Jaringan — SMK Kelas X</title>
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;&gt;&lt;text y=&#39;.9em&#39; font-size=&#39;90&#39;&gt;%F0%9F%AA%A2&lt;/text&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Tarik Tambang Jaringan — SMK Kelas X_files/css2" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2333; --paper:#fffdf5;
+  --blue:#1e6ff0; --blue-d:#0c46b0; --red:#e6483f; --red-d:#a7231c;
+  --yellow:#ffd23f; --grass:#3fa14c; --grass-d:#2c7a3a;
+  --rope:#d9a45b; --rope-d:#b17a3c;
+  --pull:36px; --winoff:180px; --teamoff:250px;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif; color:var(--ink);
+  background:linear-gradient(#8fd0f7 0%, #bfe8ff 45%, #dff4ff 100%);
+  min-height:100vh; overflow-x:hidden;
+}
+.display{font-family:'Bungee',cursive; letter-spacing:.5px}
+
+/* ====== TICKER ====== */
+.ticker{background:var(--ink); color:#fff; overflow:hidden; border-bottom:4px solid var(--red)}
+.ticker-track{display:inline-flex; white-space:nowrap; padding:7px 0;
+  animation:scrollTicker 22s linear infinite; font-weight:800; font-size:.82rem; letter-spacing:2px}
+.ticker-track span{padding-right:2rem}
+@keyframes scrollTicker{to{transform:translateX(-50%)}}
+
+/* ====== HUD / SKORBORD ====== */
+.hud{max-width:1000px; margin:18px auto 10px; padding:0 14px;
+  display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:stretch}
+.team-card{background:var(--paper); border:4px solid var(--ink); border-radius:14px 30px 14px 30px;
+  padding:10px 16px; display:flex; align-items:center; gap:12px;
+  box-shadow:0 6px 0 rgba(28,35,51,.85); transition:transform .2s}
+.team-card.blue{border-color:var(--blue-d); background:linear-gradient(120deg,#eaf2ff,#fff)}
+.team-card.red{border-color:var(--red-d); background:linear-gradient(240deg,#ffecec,#fff); flex-direction:row-reverse; text-align:right}
+.team-card.pop{animation:cardPop .5s}
+@keyframes cardPop{35%{transform:scale(1.07) rotate(-1deg)}}
+.avatar{width:52px; height:52px; border-radius:50%; display:grid; place-items:center;
+  font-size:1.7rem; border:3px solid var(--ink); flex:none}
+.avatar.b{background:#cfe1ff}.avatar.r{background:#ffd9d6}
+.team-name{font-family:'Bungee'; font-size:clamp(.85rem,2.4vw,1.15rem); line-height:1}
+.team-name.b{color:var(--blue-d)} .team-name.r{color:var(--red-d)}
+.team-tag{font-size:.68rem; font-weight:800; letter-spacing:1.5px; opacity:.65; margin-top:3px}
+.pull-count{margin-left:auto}
+.team-card.red .pull-count{margin-left:0; margin-right:auto}
+.pull-count b{font-family:'Bungee'; font-size:1.9rem; display:block; line-height:1}
+.pull-count.b b{color:var(--blue)} .pull-count.r b{color:var(--red)}
+.pull-count small{font-size:.6rem; font-weight:900; letter-spacing:1.5px}
+.mid{background:var(--ink); color:#fff; border-radius:16px; padding:8px 18px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  border:4px solid var(--ink); box-shadow:0 6px 0 rgba(28,35,51,.35); min-width:150px}
+.round{font-family:'Bungee'; font-size:clamp(.8rem,2vw,1rem)}
+.round b{color:var(--yellow)}
+.dots{display:flex; gap:6px}
+.dots span{width:14px; height:14px; border-radius:50%; background:#ffffff33; border:2px solid #ffffff55; transition:.3s}
+.dots span.ok{background:var(--blue); border-color:#9cc3ff; box-shadow:0 0 8px var(--blue)}
+.dots span.no{background:var(--red); border-color:#ffb3ae; box-shadow:0 0 8px var(--red)}
+.tilt{font-size:.68rem; font-weight:900; letter-spacing:1px; padding:3px 10px; border-radius:20px;
+  background:#ffffff18; transition:.3s; white-space:nowrap}
+.tilt.t-l{background:var(--blue); animation:pulseT 1s infinite}
+.tilt.t-r{background:var(--red); animation:pulseT 1s infinite}
+@keyframes pulseT{50%{transform:scale(1.08)}}
+
+/* ====== ARENA ====== */
+.arena-wrap{max-width:1000px; margin:0 auto; padding:0 14px}
+.arena{position:relative; height:clamp(280px,42vw,390px); border:5px solid var(--ink);
+  border-radius:22px; overflow:hidden; background:linear-gradient(#9ed7fb 0%, #cdeeff 68%, #cdeeff 70%);
+  box-shadow:0 8px 0 rgba(28,35,51,.85)}
+.arena.shake{animation:shakeA .45s}
+@keyframes shakeA{20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+.sun{position:absolute; top:26px; left:30px; width:54px; height:54px; border-radius:50%;
+  background:var(--yellow); box-shadow:0 0 34px #ffe58a; z-index:1}
+.sun::after{content:""; position:absolute; inset:-16px; border-radius:50%;
+  background:repeating-conic-gradient(rgba(255,210,63,.85) 0 7deg, transparent 7deg 22deg);
+  -webkit-mask:radial-gradient(circle, transparent 52%, #000 53%); mask:radial-gradient(circle, transparent 52%, #000 53%);
+  animation:spinSun 40s linear infinite}
+@keyframes spinSun{to{transform:rotate(360deg)}}
+
+.cloud{position:absolute; background:#fff; border-radius:50px; opacity:.95; z-index:1;
+  animation:driftCloud linear infinite}
+.cloud::before,.cloud::after{content:""; position:absolute; background:#fff; border-radius:50%}
+.cloud::before{width:55%; height:160%; left:12%; bottom:28%}
+.cloud::after{width:42%; height:120%; right:12%; bottom:30%}
+@keyframes driftCloud{from{transform:translateX(-140px)}to{transform:translateX(1100px)}}
+
+.bunting{position:absolute; top:0; left:-2%; right:-2%; z-index:3; display:flex;
+  border-top:5px solid var(--ink); filter:drop-shadow(0 3px 0 rgba(0,0,0,.12))}
+.bunting i{flex:1; height:26px; margin:0 2px; clip-path:polygon(0 0,100% 0,50% 100%);
+  animation:swayFlag 3s ease-in-out infinite; transform-origin:top center}
+@keyframes swayFlag{50%{transform:scaleY(.86)}}
+
+.crowd{position:absolute; left:0; right:0; bottom:30%; height:34px; z-index:2;
+  display:flex; align-items:flex-end; justify-content:center; gap:7px; opacity:.9}
+.crowd i{display:block; border-radius:50%; border:2px solid rgba(28,35,51,.55);
+  animation:bobCrowd 1.5s ease-in-out infinite}
+@keyframes bobCrowd{50%{transform:translateY(-5px)}}
+
+.grass{position:absolute; left:0; right:0; bottom:0; height:30%; z-index:3;
+  background:linear-gradient(var(--grass), var(--grass-d)); border-top:5px solid var(--ink)}
+.grass::before{content:""; position:absolute; inset:0; opacity:.25;
+  background:repeating-linear-gradient(90deg, transparent 0 26px, rgba(255,255,255,.35) 26px 28px)}
+.zone-label{position:absolute; bottom:6px; z-index:4; font-family:'Bungee'; font-size:clamp(.55rem,1.6vw,.8rem);
+  padding:3px 10px; border-radius:20px; color:#fff}
+.zone-label.zl{left:12px; background:var(--blue-d)} .zone-label.zr{right:12px; background:var(--red-d)}
+
+.centerline{position:absolute; left:50%; bottom:0; height:30%; width:5px; z-index:4;
+  transform:translateX(-50%); background:#fff; opacity:.9}
+.centerline::before{content:""; position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  width:16px; height:16px; background:var(--yellow); border:3px solid var(--ink); border-radius:50%}
+.winline{position:absolute; bottom:0; height:30%; z-index:4; border-left:4px dashed #ffffffd8}
+.winline::before{content:attr(data-t); position:absolute; top:-24px; left:-4px; font-family:'Bungee';
+  font-size:.55rem; background:#fff; color:var(--ink); border:2px solid var(--ink);
+  padding:2px 7px; border-radius:8px; white-space:nowrap}
+.winline.wl{left:calc(50% - var(--winoff))} .winline.wr{left:calc(50% + var(--winoff))}
+
+/* lapisan yang bergeser: tali + kedua tim */
+.pull-layer{position:absolute; inset:0; z-index:5;
+  transition:transform .9s cubic-bezier(.22,1.45,.36,1); will-change:transform}
+.pull-layer.finale{transition:transform 1.5s cubic-bezier(.3,1.5,.35,1)}
+.rope{position:absolute; top:69%; left:-520px; width:calc(100% + 1040px); height:13px;
+  border-radius:8px; border:2px solid #8a5a26;
+  background:repeating-linear-gradient(105deg, var(--rope) 0 11px, var(--rope-d) 11px 16px);
+  box-shadow:0 5px 6px rgba(0,0,0,.22)}
+.rope-flag{position:absolute; top:calc(69% - 46px); left:calc(50% - 3px); width:6px; height:48px;
+  background:#7a4a1c; border-radius:4px}
+.rope-flag::after{content:""; position:absolute; top:2px; left:6px; width:34px; height:22px;
+  background:var(--red); clip-path:polygon(0 0,100% 50%,0 100%);
+  animation:flagWave .8s ease-in-out infinite; transform-origin:left center}
+@keyframes flagWave{50%{transform:skewY(8deg) scaleX(.92)}}
+
+.team{position:absolute; bottom:5%; width:140px}
+.team svg{display:block; width:100%; overflow:visible}
+.team-left{left:calc(50% - var(--teamoff) - 100px); transform-origin:20% 100%;
+  animation:tugPull .85s ease-in-out infinite alternate}
+.team-right{left:calc(50% + var(--teamoff) - 24px); transform-origin:80% 100%;
+  animation:tugPull .85s ease-in-out infinite alternate-reverse}
+@keyframes tugPull{to{transform:translateX(-5px) rotate(-1.6deg)}}
+.team .shadow{position:absolute; bottom:-6px; left:10%; right:10%; height:12px;
+  background:rgba(0,0,0,.25); border-radius:50%}
+.team.cheer svg{animation:cheerJump .55s ease}
+@keyframes cheerJump{35%{transform:translateY(-20px) rotate(-4deg)}}
+.team.taunt svg{animation:tauntW .55s ease}
+@keyframes tauntW{25%{transform:rotate(5deg)}65%{transform:rotate(-5deg)}}
+.team-right svg .eyes{animation:blinkE 3.4s infinite}
+@keyframes blinkE{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+.team-right svg .lamp{animation:lampB 1s steps(2) infinite}
+@keyframes lampB{50%{opacity:.15}}
+.team-left.fall{animation:none; transform:rotate(78deg) translateX(46px); transition:transform 1s cubic-bezier(.4,1.5,.5,1)}
+.team-right.fall{animation:none; transform:rotate(-78deg) translateX(-46px); transition:transform 1s cubic-bezier(.4,1.5,.5,1)}
+.team.winnerJump svg{animation:winLoop .6s ease-in-out infinite}
+@keyframes winLoop{40%{transform:translateY(-16px)}}
+
+.float-msg{position:absolute; top:14%; z-index:9; font-family:'Bungee'; font-size:clamp(.9rem,2.6vw,1.4rem);
+  pointer-events:none; text-shadow:2px 2px 0 var(--ink); animation:floatUp 1.5s ease forwards}
+.float-msg.good{color:#b8ffd0; left:22%} .float-msg.bad{color:#ffd2cd; left:58%}
+@keyframes floatUp{to{transform:translateY(-70px); opacity:0}}
+
+/* ====== PANEL SOAL ====== */
+.qwrap{max-width:860px; margin:20px auto 8px; padding:0 14px}
+.qcard{background:var(--paper); border:5px solid var(--ink); border-radius:20px;
+  box-shadow:0 8px 0 rgba(28,35,51,.85); padding:22px clamp(16px,4vw,34px) 26px;
+  position:relative; animation:cardIn .45s cubic-bezier(.3,1.4,.5,1)}
+.qcard.done{opacity:.35; pointer-events:none; filter:grayscale(.4)}
+@keyframes cardIn{from{transform:translateY(26px) scale(.97); opacity:0}}
+.qtab{position:absolute; top:-18px; left:24px; background:var(--yellow); border:3px solid var(--ink);
+  font-family:'Bungee'; font-size:.8rem; padding:5px 14px; border-radius:10px;
+  box-shadow:3px 3px 0 var(--ink); transform:rotate(-2deg)}
+.qtext{font-size:clamp(1.05rem,2.6vw,1.35rem); font-weight:900; margin:14px 0 18px; line-height:1.45}
+.opts{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.opt{display:flex; align-items:center; gap:12px; text-align:left; font-family:'Nunito'; font-weight:800;
+  font-size:clamp(.9rem,2.2vw,1.05rem); padding:13px 16px; background:#fff; color:var(--ink);
+  border:3px solid var(--ink); border-radius:14px; cursor:pointer; box-shadow:0 4px 0 rgba(28,35,51,.7);
+  transition:transform .15s, box-shadow .15s, background .25s}
+.opt:hover:not(:disabled){transform:translateY(-3px); box-shadow:0 7px 0 rgba(28,35,51,.7); background:#fff8dd}
+.opt .key{font-family:'Bungee'; flex:none; width:34px; height:34px; display:grid; place-items:center;
+  background:var(--yellow); border:3px solid var(--ink); border-radius:10px}
+.opt.correct{background:#d9ffd9; border-color:#1d7a2d; animation:popOk .4s}
+.opt.correct .key{background:#43c14f; color:#fff}
+.opt.wrongPick{background:#ffd9d6; border-color:var(--red-d); animation:shakeA .4s}
+.opt.wrongPick .key{background:var(--red); color:#fff}
+.opt:disabled{cursor:default}
+.opt.dim{opacity:.5}
+@keyframes popOk{40%{transform:scale(1.05)}}
+.exp{display:none; margin-top:16px; background:#fff6d8; border-left:8px solid var(--yellow);
+  border:3px solid var(--ink); border-radius:12px; padding:12px 16px; font-weight:700; line-height:1.55}
+.exp.show{display:block; animation:cardIn .35s}
+.exp b{color:#9a6b00}
+.nextrow{display:none; margin-top:18px; text-align:right}
+.nextrow.show{display:block}
+.btn{font-family:'Bungee'; font-size:1rem; padding:13px 26px; border-radius:14px; cursor:pointer;
+  border:4px solid var(--ink); box-shadow:0 6px 0 var(--ink); color:#fff; background:var(--blue);
+  transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-3px); box-shadow:0 9px 0 var(--ink)}
+.btn:active{transform:translateY(2px); box-shadow:0 2px 0 var(--ink)}
+.btn.red{background:var(--red)} .btn.big{font-size:clamp(1.05rem,3vw,1.4rem); padding:16px 34px}
+
+.foot{text-align:center; font-weight:800; font-size:.75rem; letter-spacing:1px;
+  opacity:.75; padding:18px 14px 30px}
+
+/* ====== OVERLAY ====== */
+.overlay{position:fixed; inset:0; z-index:50; display:grid; place-items:center; padding:18px;
+  background:rgba(16,26,46,.62); transition:opacity .4s, visibility .4s}
+.overlay.hidden{opacity:0; visibility:hidden; pointer-events:none}
+.poster{background:var(--paper); border:6px solid var(--ink); border-radius:24px;
+  max-width:560px; width:100%; padding:clamp(22px,5vw,40px); text-align:center; position:relative;
+  box-shadow:0 12px 0 rgba(0,0,0,.35); transform:rotate(-1deg); animation:cardIn .5s cubic-bezier(.3,1.4,.5,1);
+  max-height:92vh; overflow:auto}
+.poster::before,.poster::after{content:""; position:absolute; width:90px; height:26px;
+  background:rgba(255,210,63,.8); border:2px solid rgba(28,35,51,.35); top:-14px}
+.poster::before{left:8%; transform:rotate(-8deg)} .poster::after{right:8%; transform:rotate(6deg)}
+.p-title{font-family:'Bungee'; line-height:.95; margin:6px 0 2px}
+.p-title .t1{display:block; font-size:clamp(1.5rem,6vw,2.5rem); color:var(--ink);
+  text-shadow:3px 3px 0 var(--yellow)}
+.p-title .t2{display:block; font-size:clamp(1.9rem,8vw,3.4rem); color:var(--red);
+  text-shadow:4px 4px 0 var(--ink)}
+.p-sub{font-weight:900; letter-spacing:2px; font-size:.72rem; opacity:.7; margin:8px 0 16px}
+.vs-row{display:flex; align-items:center; justify-content:center; gap:14px; margin:6px 0 16px}
+.vs-badge{border:3px solid var(--ink); border-radius:14px; padding:8px 14px; font-weight:900;
+  font-size:.8rem; box-shadow:0 4px 0 rgba(28,35,51,.6)}
+.vs-badge.b{background:#dce9ff; color:var(--blue-d)} .vs-badge.r{background:#ffe3e0; color:var(--red-d)}
+.vs-badge .emo{font-size:1.5rem; display:block}
+.vs-mid{font-family:'Bungee'; background:var(--ink); color:var(--yellow); width:48px; height:48px;
+  display:grid; place-items:center; border-radius:50%; font-size:1.1rem; transform:rotate(8deg);
+  box-shadow:0 4px 0 rgba(28,35,51,.4)}
+.rules{text-align:left; margin:0 auto 20px; max-width:420px; display:grid; gap:9px}
+.rules li{list-style:none; display:flex; gap:10px; align-items:flex-start; font-weight:700;
+  font-size:.9rem; line-height:1.4}
+.rules .n{font-family:'Bungee'; flex:none; width:26px; height:26px; display:grid; place-items:center;
+  background:var(--yellow); border:2px solid var(--ink); border-radius:8px; font-size:.75rem}
+.verdict{font-family:'Bungee'; font-size:clamp(1.4rem,6vw,2.3rem); line-height:1.05; margin:8px 0 4px}
+.verdict.win{color:var(--blue-d); text-shadow:3px 3px 0 var(--yellow)}
+.verdict.lose{color:var(--red-d); text-shadow:3px 3px 0 #ffd9d6}
+.tier{font-weight:900; letter-spacing:1px; margin-bottom:10px}
+.stars{font-size:1.7rem; letter-spacing:6px; margin:4px 0 12px}
+.scoreline{font-family:'Bungee'; font-size:1rem; margin-bottom:14px}
+.recap{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:18px}
+.recap span{border:3px solid var(--ink); border-radius:10px; font-weight:900; font-size:.75rem;
+  padding:5px 10px; box-shadow:0 3px 0 rgba(28,35,51,.5)}
+.recap .ok{background:#d9ffd9} .recap .no{background:#ffd9d6}
+.msg{font-weight:800; margin-bottom:20px; line-height:1.5}
+
+#muteBtn{position:fixed; top:46px; right:14px; z-index:60; width:46px; height:46px; border-radius:50%;
+  border:3px solid var(--ink); background:var(--paper); font-size:1.2rem; cursor:pointer;
+  box-shadow:0 4px 0 var(--ink); transition:transform .15s}
+#muteBtn:hover{transform:scale(1.1)}
+#fx{position:fixed; inset:0; z-index:70; pointer-events:none}
+
+@media(max-width:680px){
+  .hud{grid-template-columns:1fr 1fr; gap:8px}
+  .mid{grid-column:1/-1; order:-1; flex-direction:row; justify-content:space-between; min-width:0}
+  .opts{grid-template-columns:1fr}
+  .team-tag{display:none}
+  .pull-count b{font-size:1.4rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<canvas id="fx"></canvas>
+<button id="muteBtn" title="Suara">🔊</button>
+
+<div class="ticker"><div class="ticker-track" id="tickerTrack"><span>🏆 TARIK TAMBANG JARINGAN ★ DASAR TEKNIK JARINGAN KOMPUTER &amp; TELEKOMUNIKASI ★ SMK KELAS X ★ SIAPKAN JAWABANMU ★ 🏆 TARIK TAMBANG JARINGAN ★ DASAR TEKNIK JARINGAN KOMPUTER &amp; TELEKOMUNIKASI ★ SMK KELAS X ★ SIAPKAN JAWABANMU ★ </span><span>🏆 TARIK TAMBANG JARINGAN ★ DASAR TEKNIK JARINGAN KOMPUTER &amp; TELEKOMUNIKASI ★ SMK KELAS X ★ SIAPKAN JAWABANMU ★ 🏆 TARIK TAMBANG JARINGAN ★ DASAR TEKNIK JARINGAN KOMPUTER &amp; TELEKOMUNIKASI ★ SMK KELAS X ★ SIAPKAN JAWABANMU ★ </span></div></div>
+
+<!-- PAPAN SKOR -->
+<section class="hud">
+  <div class="team-card blue" id="cardL">
+    <div class="avatar b">🧑‍🎓</div>
+    <div><div class="team-name b">TIM SISWA</div><div class="team-tag">KELAS X • MANUSIA</div></div>
+    <div class="pull-count b"><b id="pullL">1</b><small>TARIKAN BENAR</small></div>
+  </div>
+  <div class="mid">
+    <div class="round">BABAK <b id="roundNo">1</b>/5</div>
+    <div class="dots" id="dots"><span class="ok"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+    <div class="tilt t-l" id="tilt">💪 SISWA UNGGUL 1 TARIKAN</div>
+  </div>
+  <div class="team-card red" id="cardR">
+    <div class="avatar r">🤖</div>
+    <div><div class="team-name r">TIM KOMPUTER</div><div class="team-tag">AI • TANPA AMPUN</div></div>
+    <div class="pull-count r"><b id="pullR">0</b><small>TARIKAN SALAH</small></div>
+  </div>
+</section>
+
+<!-- ARENA -->
+<section class="arena-wrap">
+  <div class="arena" id="arena" style="--winoff: 200px; --teamoff: 270px;">
+    <div class="sun"></div>
+    <div id="clouds"><div class="cloud" style="top:38px;width:120px;height:30px;animation-duration:1.30s;animation-delay:-0s"></div><div class="cloud" style="top:70px;width:90px;height:22px;animation-duration:10s;animation-delay:-9s"></div><div class="cloud" style="top:120px;width:150px;height:40px;animation-duration:1.60s;animation-delay:-18s"></div></div>
+    <div class="bunting" id="bunting"><i style="background:#e6483f;animation-delay:0s"></i><i style="background:#ffd23f;animation-delay:0.13s"></i><i style="background:#1e6ff0;animation-delay:0.26s"></i><i style="background:#ffffff;animation-delay:0.39s"></i><i style="background:#43c14f;animation-delay:0.52s"></i><i style="background:#e6483f;animation-delay:0.65s"></i><i style="background:#ffd23f;animation-delay:0.78s"></i><i style="background:#1e6ff0;animation-delay:0.91s"></i><i style="background:#ffffff;animation-delay:1.04s"></i><i style="background:#43c14f;animation-delay:1.17s"></i><i style="background:#e6483f;animation-delay:1.3s"></i><i style="background:#ffd23f;animation-delay:1.4300000000000002s"></i><i style="background:#1e6ff0;animation-delay:1.56s"></i><i style="background:#ffffff;animation-delay:1.69s"></i><i style="background:#43c14f;animation-delay:1.82s"></i><i style="background:#e6483f;animation-delay:1.9500000000000002s"></i><i style="background:#ffd23f;animation-delay:2.08s"></i><i style="background:#1e6ff0;animation-delay:2.21s"></i><i style="background:#ffffff;animation-delay:2.34s"></i><i style="background:#43c14f;animation-delay:2.47s"></i><i style="background:#e6483f;animation-delay:2.6s"></i><i style="background:#ffd23f;animation-delay:2.73s"></i><i style="background:#1e6ff0;animation-delay:2.8600000000000003s"></i><i style="background:#ffffff;animation-delay:2.99s"></i></div>
+    <div class="crowd" id="crowd"><i style="width:13.874252664996408px;height:13.874252664996408px;background:#ffd9b3;animation-delay:0.66s"></i><i style="width:13.666339087946316px;height:13.666339087946316px;background:#f7c99b;animation-delay:0.12s"></i><i style="width:10.21950067525825px;height:10.21950067525825px;background:#e8b087;animation-delay:0.36s"></i><i style="width:10.434446328587878px;height:10.434446328587878px;background:#c98d5f;animation-delay:1.43s"></i><i style="width:15.210927617162977px;height:15.210927617162977px;background:#ffd9b3;animation-delay:0.34s"></i><i style="width:14.13787879930292px;height:14.13787879930292px;background:#f7c99b;animation-delay:0.25s"></i><i style="width:15.169863296830979px;height:15.169863296830979px;background:#e8b087;animation-delay:1.47s"></i><i style="width:12.048958419751399px;height:12.048958419751399px;background:#c98d5f;animation-delay:0.20s"></i><i style="width:11.746653462010547px;height:11.746653462010547px;background:#ffd9b3;animation-delay:0.80s"></i><i style="width:14.617644013722959px;height:14.617644013722959px;background:#f7c99b;animation-delay:0.47s"></i><i style="width:14.738424718488343px;height:14.738424718488343px;background:#e8b087;animation-delay:0.52s"></i><i style="width:14.210498206067808px;height:14.210498206067808px;background:#c98d5f;animation-delay:0.91s"></i><i style="width:14.495550972542343px;height:14.495550972542343px;background:#ffd9b3;animation-delay:1.34s"></i><i style="width:11.965848809411504px;height:11.965848809411504px;background:#f7c99b;animation-delay:1.40s"></i><i style="width:13.838250378655268px;height:13.838250378655268px;background:#e8b087;animation-delay:1.49s"></i><i style="width:12.339199826150445px;height:12.339199826150445px;background:#c98d5f;animation-delay:0.75s"></i><i style="width:14.323171996820403px;height:14.323171996820403px;background:#ffd9b3;animation-delay:0.59s"></i><i style="width:15.399009506822923px;height:15.399009506822923px;background:#f7c99b;animation-delay:0.84s"></i><i style="width:11.818928094598537px;height:11.818928094598537px;background:#e8b087;animation-delay:1.41s"></i><i style="width:15.795777246886061px;height:15.795777246886061px;background:#c98d5f;animation-delay:0.87s"></i><i style="width:12.868489971588208px;height:12.868489971588208px;background:#ffd9b3;animation-delay:0.69s"></i><i style="width:12.254429449351273px;height:12.254429449351273px;background:#f7c99b;animation-delay:1.25s"></i><i style="width:10.887549189486684px;height:10.887549189486684px;background:#e8b087;animation-delay:0.39s"></i><i style="width:15.223189415302812px;height:15.223189415302812px;background:#c98d5f;animation-delay:0.41s"></i><i style="width:12.923670449230654px;height:12.923670449230654px;background:#ffd9b3;animation-delay:0.49s"></i><i style="width:13.856992891916398px;height:13.856992891916398px;background:#f7c99b;animation-delay:0.61s"></i><i style="width:14.033333843651963px;height:14.033333843651963px;background:#e8b087;animation-delay:0.11s"></i><i style="width:12.347211292877738px;height:12.347211292877738px;background:#c98d5f;animation-delay:0.81s"></i><i style="width:15.45329385501741px;height:15.45329385501741px;background:#ffd9b3;animation-delay:0.87s"></i><i style="width:10.862839591599384px;height:10.862839591599384px;background:#f7c99b;animation-delay:1.44s"></i></div>
+    <div class="grass"></div>
+    <div class="zone-label zl">ZONA SISWA</div>
+    <div class="zone-label zr">ZONA KOMPUTER</div>
+    <div class="centerline"></div>
+    <div class="winline wl" data-t="GARIS MENANG SISWA"></div>
+    <div class="winline wr" data-t="GARIS KOMPUTER"></div>
+
+    <div class="pull-layer" id="pullLayer" style="transform: translateX(-40px);">
+      <div class="rope"></div>
+      <div class="rope-flag"></div>
+
+      <!-- TIM SISWA -->
+      <div class="team team-left cheer" id="teamL">
+        <div class="shadow"></div>
+        <svg viewBox="0 0 210 160">
+          <!-- siswa belakang -->
+          <g transform="translate(-52,7) scale(.93)" opacity=".97">
+            <path d="M88 94 L48 150 M88 94 L122 148" stroke="#4a4f5c" stroke-width="11" stroke-linecap="round"></path>
+            <path d="M88 94 L70 48" stroke="#f4f6fb" stroke-width="26" stroke-linecap="round"></path>
+            <path d="M78 40 L96 44 L86 60 Z" fill="#e6483f"></path>
+            <circle cx="58" cy="26" r="16" fill="#f7c99b" stroke="#1c2333" stroke-width="2.5"></circle>
+            <circle cx="68" cy="14" r="7" fill="#2b2320"></circle>
+            <path d="M44 22 Q56 6 72 18 L70 26 Q56 14 46 28 Z" fill="#2b2320"></path>
+            <circle cx="63" cy="25" r="2" fill="#1c2333"></circle>
+            <path d="M74 50 L150 52 M74 58 L154 60" stroke="#f7c99b" stroke-width="9" stroke-linecap="round"></path>
+            <circle cx="152" cy="56" r="7" fill="#f7c99b" stroke="#1c2333" stroke-width="2"></circle>
+          </g>
+          <!-- siswa depan -->
+          <g>
+            <path d="M88 94 L46 150 M88 94 L121 148" stroke="#3f4756" stroke-width="11" stroke-linecap="round"></path>
+            <ellipse cx="44" cy="152" rx="10" ry="5" fill="#23272f"></ellipse>
+            <ellipse cx="124" cy="150" rx="10" ry="5" fill="#23272f"></ellipse>
+            <path d="M88 94 L70 46" stroke="#ffffff" stroke-width="27" stroke-linecap="round"></path>
+            <path d="M88 94 L70 46" stroke="#1c2333" stroke-width="31" stroke-linecap="round" fill="none" opacity=".12"></path>
+            <path d="M76 38 L96 42 L85 60 Z" fill="#e6483f" stroke="#a7231c" stroke-width="2"></path>
+            <circle cx="56" cy="24" r="17" fill="#ffd9b3" stroke="#1c2333" stroke-width="3"></circle>
+            <path d="M40 20 Q54 2 72 16 L70 25 Q55 10 42 27 Z" fill="#3a2c22"></path>
+            <rect x="40" y="15" width="32" height="7" rx="3" fill="#e6483f" transform="rotate(-10 56 18)"></rect>
+            <circle cx="62" cy="23" r="2.4" fill="#1c2333"></circle>
+            <path d="M58 16 L67 18" stroke="#1c2333" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M60 32 Q64 34 67 31" stroke="#1c2333" stroke-width="2" fill="none" stroke-linecap="round"></path>
+            <path d="M72 48 L148 50 M74 58 L152 60" stroke="#ffd9b3" stroke-width="10" stroke-linecap="round"></path>
+            <path d="M72 48 L96 49 M74 58 L98 59" stroke="#fff" stroke-width="12" stroke-linecap="round"></path>
+            <circle cx="150" cy="52" r="7.5" fill="#ffd9b3" stroke="#1c2333" stroke-width="2.5"></circle>
+            <circle cx="154" cy="62" r="7.5" fill="#ffd9b3" stroke="#1c2333" stroke-width="2.5"></circle>
+          </g>
+        </svg>
+      </div>
+
+      <!-- TIM KOMPUTER -->
+      <div class="team team-right" id="teamR">
+        <div class="shadow"></div>
+        <svg viewBox="0 0 200 160">
+          <rect x="62" y="122" width="112" height="28" rx="14" fill="#2b3242" stroke="#1c2333" stroke-width="3"></rect>
+          <circle cx="84" cy="136" r="9" fill="#59627a"></circle><circle cx="118" cy="136" r="9" fill="#59627a"></circle><circle cx="152" cy="136" r="9" fill="#59627a"></circle>
+          <path d="M78 84 L34 56 M80 96 L36 66" stroke="#9aa4b8" stroke-width="10" stroke-linecap="round"></path>
+          <circle cx="32" cy="56" r="8" fill="#7c8698" stroke="#1c2333" stroke-width="2.5"></circle>
+          <circle cx="34" cy="67" r="8" fill="#7c8698" stroke="#1c2333" stroke-width="2.5"></circle>
+          <rect x="70" y="60" width="92" height="64" rx="12" fill="#cfd6e4" stroke="#1c2333" stroke-width="3.5"></rect>
+          <rect x="84" y="100" width="64" height="14" rx="4" fill="#e6483f"></rect>
+          <text x="116" y="111" text-anchor="middle" font-family="Bungee" font-size="10" fill="#fff">AI-10</text>
+          <circle cx="84" cy="76" r="4" fill="#43c14f"></circle><circle cx="98" cy="76" r="4" fill="#ffd23f"></circle>
+          <rect x="78" y="16" width="76" height="44" rx="9" fill="#e3e8f2" stroke="#1c2333" stroke-width="3.5"></rect>
+          <rect x="86" y="24" width="60" height="28" rx="4" fill="#10182b"></rect>
+          <g class="eyes">
+            <rect x="97" y="30" width="9" height="13" rx="2" fill="#35e0ff"></rect>
+            <rect x="124" y="30" width="9" height="13" rx="2" fill="#35e0ff"></rect>
+          </g>
+          <rect x="104" y="46" width="24" height="4" rx="2" fill="#35e0ff"></rect>
+          <line x1="116" y1="16" x2="116" y2="5" stroke="#1c2333" stroke-width="3"></line>
+          <circle class="lamp" cx="116" cy="4" r="5" fill="#e6483f"></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL SOAL -->
+<section class="qwrap">
+  <div class="qcard" id="qcard" style="">
+    <div class="qtab" id="qtab">PERTANYAAN #1</div>
+    <p class="qtext" id="qtext">Kumpulan beberapa komputer yang saling terhubung untuk berbagi data dan sumber daya disebut…</p>
+    <div class="opts" id="opts"><button class="opt dim" disabled=""><span class="key">A</span><span>Aplikasi perkantoran</span></button><button class="opt dim" disabled=""><span class="key">B</span><span>Sistem operasi</span></button><button class="opt correct" disabled=""><span class="key">C</span><span>Jaringan komputer</span></button><button class="opt dim" disabled=""><span class="key">D</span><span>Perangkat keras</span></button></div>
+    <div class="exp show" id="exp">💡 <b>Jaringan komputer</b> adalah dua komputer atau lebih yang saling terhubung sehingga dapat bertukar data dan berbagi sumber daya seperti printer, file, dan koneksi internet.</div>
+    <div class="nextrow show" id="nextrow"><button class="btn" id="nextBtn">TARIK LAGI →</button></div>
+  </div>
+</section>
+
+<footer class="foot">MEDIA PEMBELAJARAN • DASAR TEKNIK JARINGAN KOMPUTER &amp; TELEKOMUNIKASI • SMK KELAS X</footer>
+
+<!-- OVERLAY INTRO -->
+<div class="overlay hidden" id="introOv">
+  <div class="poster">
+    <div class="p-title"><span class="t1">TARIK TAMBANG</span><span class="t2">JARINGAN!</span></div>
+    <div class="p-sub">DASAR JARINGAN KOMPUTER • SMK KELAS X</div>
+    <div class="vs-row">
+      <div class="vs-badge b"><span class="emo">🧑‍🎓</span>TIM SISWA</div>
+      <div class="vs-mid">VS</div>
+      <div class="vs-badge r"><span class="emo">🤖</span>TIM KOMPUTER</div>
+    </div>
+    <ul class="rules">
+      <li><span class="n">1</span>Jawab <b>&nbsp;5 pertanyaan&nbsp;</b> seputar jaringan komputer.</li>
+      <li><span class="n">2</span>Jawaban <b style="color:#1d7a2d">&nbsp;BENAR&nbsp;</b> → tali tertarik ke kiri, ke arah TIM SISWA! 💪</li>
+      <li><span class="n">3</span>Jawaban <b style="color:var(--red-d)">&nbsp;SALAH&nbsp;</b> → komputer menarik tali ke kanan. 😱</li>
+      <li><span class="n">4</span>Jika di akhir tali condong ke kiri, <b>&nbsp;SISWA MENANG!&nbsp;</b> Jawab semua dengan benar untuk kemenangan sempurna. 🏆</li>
+    </ul>
+    <button class="btn red big" id="startBtn">MULAI TARIKAN! 🪢</button>
+  </div>
+</div>
+
+<!-- OVERLAY HASIL -->
+<div class="overlay hidden" id="resultOv">
+  <div class="poster">
+    <div class="verdict" id="verdict"></div>
+    <div class="tier" id="tier"></div>
+    <div class="stars" id="stars"></div>
+    <div class="scoreline" id="scoreline"></div>
+    <div class="recap" id="recap"></div>
+    <p class="msg" id="msg"></p>
+    <button class="btn big" id="replayBtn">TARIK LAGI! 🔁</button>
+  </div>
+</div>
+
+<script>
+/* ================= DATA SOAL ================= */
+const QUESTIONS=[
+ {q:"Kumpulan beberapa komputer yang saling terhubung untuk berbagi data dan sumber daya disebut…",
+  opts:[["Jaringan komputer",1],["Sistem operasi",0],["Perangkat keras",0],["Aplikasi perkantoran",0]],
+  exp:"<b>Jaringan komputer</b> adalah dua komputer atau lebih yang saling terhubung sehingga dapat bertukar data dan berbagi sumber daya seperti printer, file, dan koneksi internet."},
+ {q:"Jaringan komputer yang mencakup area sempit seperti satu ruangan atau satu gedung sekolah disebut…",
+  opts:[["LAN (Local Area Network)",1],["WAN (Wide Area Network)",0],["MAN (Metropolitan Area Network)",0],["Internet",0]],
+  exp:"<b>LAN</b> mencakup area kecil seperti ruangan, lab, atau gedung. MAN mencakup satu kota, sedangkan WAN mencakup area yang sangat luas, bahkan antarnegara."},
+ {q:"Alamat berupa angka yang dimiliki setiap komputer agar dapat dikenali dalam jaringan adalah…",
+  opts:[["IP Address",1],["Nama folder",0],["Kode pos",0],["Password",0]],
+  exp:"<b>IP Address</b> adalah identitas numerik unik setiap perangkat dalam jaringan — mirip alamat rumah, agar paket data tidak salah tujuan."},
+ {q:"Perangkat yang menjadi pusat koneksi antar komputer dalam jaringan LAN adalah…",
+  opts:[["Switch",1],["Speaker",0],["Scanner",0],["Mouse",0]],
+  exp:"<b>Switch</b> berfungsi menghubungkan banyak komputer dalam satu jaringan dan meneruskan data tepat ke komputer tujuan."},
+ {q:"Kabel yang paling umum dipakai untuk membangun jaringan LAN dengan konektor RJ-45 adalah…",
+  opts:[["Kabel UTP",1],["Kabel HDMI",0],["Kabel USB",0],["Kabel listrik",0]],
+  exp:"<b>Kabel UTP</b> (Unshielded Twisted Pair) adalah kabel paling umum untuk LAN, dipasang menggunakan konektor <b>RJ-45</b> dan di-crimping dengan tang crimping."}
+];
+
+/* ================= STATE ================= */
+let cur=0, bal=0, res=[], locked=true, muted=false, actx=null, game=[];
+const $=id=>document.getElementById(id);
+const arena=$("arena"), pullLayer=$("pullLayer");
+let PULL=36;
+
+/* ================= DEKORASI ================= */
+(function build(){
+  const tt="🏆 TARIK TAMBANG JARINGAN ★ DASAR TEKNIK JARINGAN KOMPUTER & TELEKOMUNIKASI ★ SMK KELAS X ★ SIAPKAN JAWABANMU ★ ";
+  $("tickerTrack").innerHTML="<span>"+tt+tt+"</span><span>"+tt+tt+"</span>";
+  const cols=["#e6483f","#ffd23f","#1e6ff0","#ffffff","#43c14f"];
+  let b="";for(let i=0;i<24;i++)b+=`<i style="background:${cols[i%5]};animation-delay:${i*.13}s"></i>`;
+  $("bunting").innerHTML=b;
+  let c="";[[38,120,60,1.3],[70,90,44,1],[120,150,80,1.6]].forEach((cl,i)=>{
+    c+=`<div class="cloud" style="top:${cl[0]}px;width:${cl[1]}px;height:${cl[2]/2}px;animation-duration:${cl[3]}0s;animation-delay:-${i*9}s"></div>`;});
+  $("clouds").innerHTML=c;
+  let cr="";const skin=["#ffd9b3","#f7c99b","#e8b087","#c98d5f"];
+  for(let i=0;i<30;i++){const s=10+Math.random()*6;
+    cr+=`<i style="width:${s}px;height:${s}px;background:${skin[i%4]};animation-delay:${(Math.random()*1.5).toFixed(2)}s"></i>`;}
+  $("crowd").innerHTML=cr;
+  let d="";for(let i=0;i<5;i++)d+="<span></span>";$("dots").innerHTML=d;
+})();
+
+/* ================= METRIK RESPONSIF ================= */
+function metrics(){
+  const w=arena.clientWidth;
+  PULL=Math.max(20,Math.min(40,(w*0.5-70)/5));
+  arena.style.setProperty("--winoff",(PULL*5)+"px");
+  arena.style.setProperty("--teamoff",Math.min(PULL*5+70,w*0.5-10)+"px");
+  pullLayer.style.transition="none";
+  pullLayer.style.transform=`translateX(${bal*PULL}px)`;
+  requestAnimationFrame(()=>pullLayer.style.transition="");
+}
+addEventListener("resize",metrics);
+
+/* ================= SUARA ================= */
+function ac(){if(!actx){try{actx=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}return actx}
+function tone(f,t,d,type="square",v=.13){const a=ac();if(!a||muted)return;
+  const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=f;
+  g.gain.setValueAtTime(v,a.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+t+d);
+  o.connect(g);g.connect(a.destination);o.start(a.currentTime+t);o.stop(a.currentTime+t+d);}
+const sClick=()=>tone(620,0,.07,"triangle",.1);
+const sOk=()=>{tone(523,0,.1);tone(784,.1,.16)};
+const sNo=()=>{tone(196,0,.18,"sawtooth");tone(140,.16,.24,"sawtooth")};
+const sWin=()=>[523,659,784,1047].forEach((f,i)=>tone(f,i*.14,.22,"triangle",.16));
+const sLose=()=>[392,330,262,196].forEach((f,i)=>tone(f,i*.16,.24,"sawtooth",.12));
+$("muteBtn").onclick=e=>{muted=!muted;e.target.textContent=muted?"🔇":"🔊";};
+
+/* ================= UTIL ================= */
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function floatMsg(txt,good){const s=document.createElement("span");
+  s.className="float-msg "+(good?"good":"bad");s.textContent=txt;
+  arena.appendChild(s);setTimeout(()=>s.remove(),1500);}
+
+/* ================= ALUR GAME ================= */
+function startGame(){
+  game=QUESTIONS.map(q=>({q:q.q,exp:q.exp,opts:shuffle(q.opts)}));
+  cur=0;bal=0;res=[];locked=false;
+  $("pullL").textContent=0;$("pullR").textContent=0;
+  [...$("dots").children].forEach(d=>d.className="");
+  $("teamL").className="team team-left";$("teamR").className="team team-right";
+  $("qcard").classList.remove("done");
+  $("introOv").classList.add("hidden");$("resultOv").classList.add("hidden");
+  metrics();renderQ();
+}
+function renderQ(){
+  locked=false;const g=game[cur];
+  $("qtab").textContent="PERTANYAAN #"+(cur+1);
+  $("roundNo").textContent=cur+1;
+  $("qtext").textContent=g.q;
+  const box=$("opts");box.innerHTML="";
+  g.opts.forEach((o,i)=>{
+    const b=document.createElement("button");b.className="opt";
+    b.innerHTML=`<span class="key">${"ABCD"[i]}</span><span>${o[0]}</span>`;
+    b.onclick=()=>answer(i,b);box.appendChild(b);
+  });
+  $("exp").classList.remove("show");$("nextrow").classList.remove("show");
+  const qc=$("qcard");qc.style.animation="none";void qc.offsetWidth;qc.style.animation="";
+  updateTilt();
+}
+function answer(i,btn){
+  if(locked)return;locked=true;sClick();
+  const g=game[cur],ok=g.opts[i][1]===1;
+  res.push(ok);bal+=ok?-1:1;
+  [...$("opts").children].forEach((b,j)=>{
+    b.disabled=true;
+    if(g.opts[j][1]===1)b.classList.add("correct");
+    else if(j===i&&!ok)b.classList.add("wrongPick");
+    else b.classList.add("dim");
+  });
+  const tL=$("teamL"),tR=$("teamR");
+  tL.classList.remove("cheer");tR.classList.remove("taunt");void tL.offsetWidth;
+  if(ok){tL.classList.add("cheer");$("cardL").classList.add("pop");
+    floatMsg("TARIKAN KUAT! 💪",true);sOk();}
+  else{tR.classList.add("taunt");$("cardR").classList.add("pop");
+    arena.classList.add("shake");setTimeout(()=>arena.classList.remove("shake"),500);
+    floatMsg("TERPELESET! 😱",false);sNo();}
+  setTimeout(()=>{$("cardL").classList.remove("pop");$("cardR").classList.remove("pop")},600);
+  pullLayer.style.transform=`translateX(${bal*PULL}px)`;
+  $("pullL").textContent=res.filter(x=>x).length;
+  $("pullR").textContent=res.filter(x=>!x).length;
+  [...$("dots").children][cur].className=ok?"ok":"no";
+  $("exp").innerHTML="💡 "+g.exp;$("exp").classList.add("show");
+  $("nextBtn").textContent=(cur===4)?"LIHAT HASIL 🏁":"TARIK LAGI →";
+  $("nextrow").classList.add("show");
+  updateTilt();
+}
+function updateTilt(){
+  const t=$("tilt");t.className="tilt";
+  if(bal===0)t.textContent="⚖ SEIMBANG";
+  else if(bal<0){t.textContent=`💪 SISWA UNGGUL ${-bal} TARIKAN`;t.classList.add("t-l");}
+  else{t.textContent=`🤖 KOMPUTER UNGGUL ${bal} TARIKAN`;t.classList.add("t-r");}
+}
+$("nextBtn").onclick=()=>{sClick();cur++;if(cur<5)renderQ();else finale();};
+
+/* ================= FINAL ================= */
+function finale(){
+  locked=true;$("qcard").classList.add("done");
+  const win=bal<0;
+  pullLayer.classList.add("finale");
+  pullLayer.style.transform=`translateX(${(win?-1:1)*(PULL*5+80)}px)`;
+  setTimeout(()=>{
+    $(win?"teamR":"teamL").classList.add("fall");
+    $(win?"teamL":"teamR").classList.add("winnerJump");
+  },700);
+  if(win)sWin();else sLose();
+  setTimeout(()=>showResult(win),2000);
+}
+function showResult(win){
+  const correct=res.filter(x=>x).length;
+  const v=$("verdict");
+  if(win){v.textContent="🏆 TIM SISWA MENANG!";v.className="verdict win";
+    $("tier").textContent=correct===5?"✨ KEMENANGAN SEMPURNA — 5/5 BENAR! ✨":"Tali berhasil ditarik ke zona siswa!";
+    $("tier").style.color="var(--blue-d)";confetti(correct===5?260:150);}
+  else{v.textContent="🤖 TIM KOMPUTER MENANG…";v.className="verdict lose";
+    $("tier").textContent="BIP BIP! Robot menarik tali ke zonanya.";
+    $("tier").style.color="var(--red-d)";}
+  $("stars").textContent="★".repeat(correct)+"☆".repeat(5-correct);
+  $("scoreline").textContent=`SKOR: ${correct}/5 JAWABAN BENAR`;
+  $("recap").innerHTML=res.map((r,i)=>`<span class="${r?"ok":"no"}">Soal ${i+1} ${r?"✔":"✘"}</span>`).join("");
+  $("msg").textContent= win
+    ?(correct===5?"Luar biasa! Kamu menguasai dasar jaringan komputer. Ilmu jaringannya sekuat tarikanmu! 💪"
+      :"Kerja bagus! Pelajari lagi materi yang terlewat supaya tarikanmu makin kuat di babak berikutnya.")
+    :"Jangan menyerah! Baca ulang pembahasannya, lalu tantang komputer sekali lagi. 💻";
+  $("resultOv").classList.remove("hidden");
+}
+$("startBtn").onclick=()=>{ac();sClick();startGame();};
+$("replayBtn").onclick=()=>{sClick();startGame();};
+
+/* keyboard: 1-4 / A-D untuk menjawab, Enter untuk lanjut */
+addEventListener("keydown",e=>{
+  if(!$("introOv").classList.contains("hidden")){if(e.key==="Enter")$("startBtn").click();return;}
+  if(!$("resultOv").classList.contains("hidden")){if(e.key==="Enter")$("replayBtn").click();return;}
+  const map={"1":0,"2":1,"3":2,"4":3,"a":0,"b":1,"c":2,"d":3};
+  const k=e.key.toLowerCase();
+  if(k in map&&!locked){const b=$("opts").children[map[k]];if(b)b.click();}
+  if(e.key==="Enter"&&!locked&&$("nextrow").classList.contains("show"))$("nextBtn").click();
+});
+
+/* ================= KONFETI ================= */
+function confetti(n){
+  const cv=$("fx"),cx=cv.getContext("2d");cv.width=innerWidth;cv.height=innerHeight;
+  const cols=["#1e6ff0","#e6483f","#ffd23f","#43c14f","#ffffff","#ff8ac2"];
+  const ps=Array.from({length:n},()=>({x:Math.random()*cv.width,y:-30-Math.random()*250,
+    vx:(Math.random()-.5)*2.6,vy:2+Math.random()*3.4,r:Math.random()*Math.PI,
+    vr:(Math.random()-.5)*.25,s:6+Math.random()*7,c:cols[Math.random()*cols.length|0]}));
+  let t0=performance.now();
+  (function loop(t){
+    cx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+      cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;
+      cx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);cx.restore();});
+    if(t-t0<4200&&ps.some(p=>p.y<cv.height+20))requestAnimationFrame(loop);
+    else cx.clearRect(0,0,cv.width,cv.height);
+  })(t0);
+}
+metrics();
+</script>
+
+</body></html>
